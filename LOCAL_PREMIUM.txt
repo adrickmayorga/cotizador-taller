@@ -1,0 +1,17 @@
+SRNU CUSTOM · LOCAL PREMIUM ERP
+===============================
+
+Esta edición es únicamente LOCAL para XAMPP.
+No requiere login, dominio, hosting ni GitHub.
+
+Ruta recomendada:
+C:\xampp\htdocs\srnu sql\
+
+Abrir:
+http://localhost/srnu%20sql/
+
+IMPORTANTE:
+Antes de reemplazar la carpeta, respalda la base de datos srnu_cotizador en phpMyAdmin.
+La primera apertura crea automáticamente las tablas/columnas de los módulos nuevos.
+
+Lee ERP_LOCAL_COMPLETO.txt para conocer todos los módulos y automatizaciones.

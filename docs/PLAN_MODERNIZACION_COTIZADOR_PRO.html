@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Plan Maestro de Modernización, Escalamiento y Licenciamiento</title>
+<style>
+  @page {
+    size: A4;
+    margin: 16mm 14mm 16mm 14mm;
+  }
+  * {
+    box-sizing: border-box;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #1d1d1f;
+    background: #ffffff;
+    line-height: 1.55;
+    font-size: 10.5pt;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Portada */
+  .cover {
+    page-break-after: always;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 94vh;
+    padding: 30px 20px 20px;
+  }
+  .cover-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #0071e3;
+    padding-bottom: 16px;
+  }
+  .cover-badge {
+    background: #0071e3;
+    color: #ffffff;
+    font-size: 9pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 6px 14px;
+    border-radius: 20px;
+    display: inline-block;
+  }
+  .cover-version {
+    font-size: 9.5pt;
+    color: #86868b;
+    font-weight: 600;
+  }
+  .cover-body {
+    margin-top: 60px;
+  }
+  .cover-title {
+    font-size: 30pt;
+    font-weight: 800;
+    line-height: 1.15;
+    color: #1d1d1f;
+    letter-spacing: -0.03em;
+    margin: 0 0 16px 0;
+  }
+  .cover-subtitle {
+    font-size: 14pt;
+    font-weight: 400;
+    color: #424245;
+    line-height: 1.4;
+    max-width: 650px;
+    margin: 0 0 35px 0;
+  }
+  .cover-highlight-box {
+    background: #f5f5f7;
+    border-left: 4px solid #0071e3;
+    padding: 16px 20px;
+    border-radius: 0 12px 12px 0;
+    margin-bottom: 40px;
+  }
+  .cover-highlight-box p {
+    margin: 0;
+    font-size: 10pt;
+    color: #515154;
+  }
+  .cover-meta {
+    border-top: 1px solid #d2d2d7;
+    padding-top: 24px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .meta-item strong {
+    display: block;
+    font-size: 8.5pt;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #86868b;
+    margin-bottom: 4px;
+  }
+  .meta-item span {
+    font-size: 10.5pt;
+    font-weight: 600;
+    color: #1d1d1f;
+  }
+
+  /* Encabezados y Secciones */
+  .section {
+    margin-bottom: 30px;
+    page-break-inside: avoid;
+  }
+  .page-break {
+    page-break-after: always;
+  }
+  h2 {
+    font-size: 16pt;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: #1d1d1f;
+    border-bottom: 1px solid #d2d2d7;
+    padding-bottom: 8px;
+    margin-top: 28px;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  h2 span.num {
+    background: #0071e3;
+    color: white;
+    width: 26px;
+    height: 26px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 10pt;
+  }
+  h3 {
+    font-size: 12pt;
+    font-weight: 600;
+    color: #1d1d1f;
+    margin: 16px 0 8px 0;
+  }
+  p {
+    margin: 0 0 10px 0;
+    color: #333336;
+  }
+
+  /* Tablas estilizadas estilo Apple */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0 20px;
+    font-size: 9.5pt;
+  }
+  th {
+    background: #f5f5f7;
+    color: #1d1d1f;
+    font-weight: 600;
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 2px solid #d2d2d7;
+    font-size: 8.5pt;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #e5e5ea;
+    vertical-align: top;
+  }
+  tr:last-child td {
+    border-bottom: none;
+  }
+  
+  /* Tarjetas y Contenedores */
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin: 14px 0;
+  }
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 14px 0;
+  }
+  .card {
+    background: #fbfbfd;
+    border: 1px solid #e5e5ea;
+    border-radius: 12px;
+    padding: 14px 16px;
+  }
+  .card strong {
+    display: block;
+    font-size: 10pt;
+    color: #0071e3;
+    margin-bottom: 6px;
+  }
+  .card p {
+    margin: 0;
+    font-size: 9pt;
+    color: #515154;
+  }
+
+  .pill {
+    display: inline-block;
+    padding: 3px 8px;
+    font-size: 7.5pt;
+    font-weight: 700;
+    border-radius: 10px;
+    text-transform: uppercase;
+  }
+  .pill-blue { background: #e8f2ff; color: #0071e3; }
+  .pill-green { background: #e3f9e5; color: #1e8738; }
+  .pill-orange { background: #fff4e5; color: #b25e00; }
+  .pill-purple { background: #f3e8ff; color: #7e22ce; }
+
+  .callout {
+    background: #f0f7ff;
+    border: 1px solid #cce3ff;
+    border-radius: 12px;
+    padding: 14px 18px;
+    margin: 16px 0;
+  }
+  .callout strong {
+    color: #0071e3;
+    font-size: 10pt;
+  }
+  .callout p {
+    margin: 6px 0 0;
+    font-size: 9.5pt;
+    color: #1e3a8a;
+  }
+
+  /* Listas */
+  ul {
+    margin: 6px 0 12px 20px;
+    padding: 0;
+  }
+  li {
+    margin-bottom: 5px;
+    color: #333336;
+  }
+
+  /* Header & Footer en páginas internas */
+  .running-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 8pt;
+    color: #86868b;
+    border-bottom: 1px solid #e5e5ea;
+    padding-bottom: 6px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+</style>
+</head>
+<body>
+
+<!-- PORTADA -->
+<div class="cover">
+  <div class="cover-header">
+    <div class="cover-badge">Plan Estratégico & Arquitectura</div>
+    <div class="cover-version">Versión 2.0 Pro · Noviembre 2026</div>
+  </div>
+
+  <div class="cover-body">
+    <h1 class="cover-title">Plan Maestro de Modernización, Escalamiento y Licenciamiento</h1>
+    <p class="cover-subtitle">Transformación del sistema de cotización y gestión de taller a una plataforma comercial multicliente con diseño iOS, arquitectura offline/híbrida y motor de licencias.</p>
+    
+    <div class="cover-highlight-box">
+      <p><strong>Objetivo Principal:</strong> Eliminar la saturación visual actual y transformar el software en un producto SaaS/On-Premise de clase mundial, ultrarrápido, seguro, adaptable a cualquier taller automotriz con su propia identidad gráfica y con esquema de monetización recurrente por licencias.</p>
+    </div>
+  </div>
+
+  <div class="cover-meta">
+    <div class="meta-item">
+      <strong>Tipo de Proyecto</strong>
+      <span>ERP Cotizador Automotriz</span>
+    </div>
+    <div class="meta-item">
+      <strong>Infraestructura Base</strong>
+      <span>Docker + PHP 8.2 + MariaDB + Chromium</span>
+    </div>
+    <div class="meta-item">
+      <strong>Distribución</strong>
+      <span>Miniservidor / Nube / Modo Offline</span>
+    </div>
+  </div>
+</div>
+
+<!-- PÁGINA 2: RESUMEN EJECUTIVO & REDISEÑO UI/UX ESTILO IOS -->
+<div class="page-break">
+  <div class="running-header">
+    <span>Plan Maestro de Modernización</span>
+    <span>1. Rediseño UX/UI Estilo Apple iOS</span>
+  </div>
+
+  <h2><span class="num">1</span> Rediseño de UX/UI Estilo Apple iOS (Human Interface)</h2>
+  
+  <p>El diagnóstico de la interfaz actual reveló un problema crítico de <strong>saturación cognitiva</strong>: 14 botones amontonados en una barra superior estrecha, fondos oscuros densos, tipografía plana y controles de formulario sin jerarquía visual. El nuevo diseño se rige bajo los principios de <strong>Apple Human Interface Guidelines (HIG)</strong> para transmitir simplicidad, elegancia y rapidez operativa.</p>
+
+  <div class="grid-2">
+    <div class="card">
+      <strong>Interfaz Actual (Problemas)</strong>
+      <p>• Barra de menú saturada con 14 botones apretados.<br>
+      • Fondos oscuros pesados (#08111f) sin sensación de profundidad.<br>
+      • Formularios y selectores HTML toscos con bordes agresivos.<br>
+      • Difícil visualización en pantallas táctiles o tablets de taller.</p>
+    </div>
+    <div class="card">
+      <strong>Nueva Interfaz iOS (Solución)</strong>
+      <p>• Sidebar lateral colapsable agrupada por áreas claras.<br>
+      • Superficies translúcidas con desenfoque <em>glassmorphism</em>.<br>
+      • Controles táctiles nativos (<em>segmented controls</em>, toggles).<br>
+      • Tipografía SF Pro / Inter con números tabulares claros.</p>
+    </div>
+  </div>
+
+  <h3>Estructura de Navegación por Áreas Lógicas</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Área</th>
+        <th>Módulos Agrupados</th>
+        <th>Propósito UX</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Operación Principal</strong></td>
+        <td>Dashboard · Cotizaciones · Cotizador Rápido · Agenda</td>
+        <td>Todo lo que el recepcionista o asesor de servicio usa en el 80% de su día. Botón flotante siempre visible: <em>+ Nueva Cotización</em>.</td>
+      </tr>
+      <tr>
+        <td><strong>Taller y Flujo</strong></td>
+        <td>Recepción (Check-in) · Vehículos · Inventario · Compras</td>
+        <td>Control técnico de vehículos, stock de refacciones y órdenes de compra de refacciones sobre pedido.</td>
+      </tr>
+      <tr>
+        <td><strong>Finanzas</strong></td>
+        <td>Caja Diaria · Gastos · Costos Reales · Reportes</td>
+        <td>Conciliación de pagos (efectivo, tarjeta, transferencias), egresos y cálculo de margen de utilidad real por trabajo.</td>
+      </tr>
+      <tr>
+        <td><strong>Ajustes del Taller</strong></td>
+        <td>Marca Blanca · Datos Fiscales · Técnicos · Licencia</td>
+        <td>Configuración global exclusiva del dueño/administrador del taller para personalizar logos, comisiones y cuentas.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Componentes Visuales Específicos a Implementar</h3>
+  <ul>
+    <li><strong>Paleta de Color Refinada:</strong> En modo oscuro, uso de tonos grafito elegantes (<code>#000000</code>, <code>#1c1c1e</code>, <code>#2c2c2e</code>) con acentos en azul eléctrico iOS (<code>#0071e3</code>). En modo claro, blancos puros y grises neutros cálidos.</li>
+    <li><strong>Esquinas Redondeadas Continuas (Squircles):</strong> Tarjetas con <code>border-radius: 20px</code> y sombras difusas multinivel para dar sensación de capas flotantes.</li>
+    <li><strong>Tarjetas KPI Informativas:</strong> Las cifras monetarias utilizarán <code>font-variant-numeric: tabular-nums</code> y microindicadores porcentuales en verde y rojo según el rendimiento del mes.</li>
+  </ul>
+
+  <h3>Experiencia Móvil Nativa (Mobile-First para iPhone / iPad)</h3>
+  <div class="grid-2">
+    <div class="card">
+      <strong>Bottom Tab Bar Flotante (Estilo iOS)</strong>
+      <p>En smartphones, la navegación se traslada automáticamente a una barra inferior translúcida con 5 accesos táctiles y botón central destacado: <em>Dashboard, Cotizaciones, [＋ Cotizar], Recepción y Menú</em>.</p>
+    </div>
+    <div class="card">
+      <strong>Transformación de Tablas a Tarjetas Táctiles</strong>
+      <p>Se elimina por completo el scroll horizontal en móviles: las tablas de cotizaciones e inventario se convierten en tarjetas verticales con chips de estado, saldos en grande y accesos rápidos a WhatsApp y llamada.</p>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <strong>Recepción y Fotos Directas de Pie</strong>
+      <p>Optimizado para caminar alrededor del vehículo con el celular: botón directo para disparar la cámara, registrar daños y lienzo de firma táctil a pantalla completa para el dedo del cliente.</p>
+    </div>
+    <div class="card">
+      <strong>Instalación como App Nativa (PWA)</strong>
+      <p>Soporte para <em>"Agregar a pantalla de inicio"</em> en iOS/Android. Se ejecuta a pantalla completa sin barra de navegación del navegador, con ícono propio y carga ultrarrápida.</p>
+    </div>
+  </div>
+</div>
+
+<!-- PÁGINA 3: MARCA BLANCA & AUDITORÍA DE BASE DE DATOS -->
+<div class="page-break">
+  <div class="running-header">
+    <span>Plan Maestro de Modernización</span>
+    <span>2. Marca Blanca & 3. Base de Datos</span>
+  </div>
+
+  <h2><span class="num">2</span> Módulo de Marca Blanca (Whitelabel Multitaller)</h2>
+  <p>Para comercializar el sistema con licencias a distintos talleres mecánicos o de personalización, el software debe desvincularse por completo de cualquier referencia rígida a "SRNU Custom".</p>
+
+  <div class="callout">
+    <strong>Nuevo Módulo: Configuración del Taller (<code>ajustes_taller.php</code>)</strong>
+    <p>Permitirá al dueño del taller configurar de forma 100% visual y sin tocar código: logotipo, razón social, teléfonos de atención, correo, dirección física, cuentas CLABE de recepción de anticipos, moneda y términos legales.</p>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parámetro</th>
+        <th>Tipo</th>
+        <th>Impacto en el Sistema</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Logotipos del Taller</strong></td>
+        <td>Subida PNG / SVG / JPG</td>
+        <td>Reemplaza los logos Base64 fijos en pantalla, PDF de cotizaciones y hojas de recepción.</td>
+      </tr>
+      <tr>
+        <td><strong>Identidad Comercial</strong></td>
+        <td>Nombre, Slogan, RFC</td>
+        <td>Aparece en la barra superior, pestaña del navegador, membretes y comprobantes.</td>
+      </tr>
+      <tr>
+        <td><strong>Cuentas Bancarias</strong></td>
+        <td>Banco, Titular, CLABE/Tarjeta</td>
+        <td>Sustituye las cuentas fijas de socios; el PDF mostrará automáticamente las cuentas oficiales del taller comprador.</td>
+      </tr>
+      <tr>
+        <td><strong>Condiciones y Garantías</strong></td>
+        <td>Texto enriquecido</td>
+        <td>Edición libre de las cláusulas de pago, días de entrega y políticas de garantía impresas al cliente.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2><span class="num">3</span> Auditoría y Migración de Base de Datos</h2>
+  <p>Actualmente las tablas <code>cotizaciones</code>, <code>cotizacion_items</code> y <code>catalogo_servicios</code> tienen columnas con nombres de personas físicas (ej. <code>responsable_sergio</code>, <code>anticipo_ricardo</code>, etc.). La migración convertirá esta estructura en un modelo relacional dinámico sin perder un solo registro histórico.</p>
+
+  <div class="grid-2">
+    <div class="card">
+      <strong>Antes (Esquema Rígido)</strong>
+      <p>Columnas fijas en tabla <code>cotizaciones</code>:<br>
+      <code>anticipo_sergio</code> DECIMAL<br>
+      <code>anticipo_ricardo</code> DECIMAL<br>
+      <code>anticipo_tomas</code> DECIMAL<br>
+      <em>Limitado a 3 personas fijas; no permite agregar más mecánicos ni cambiar nombres.</em></p>
+    </div>
+    <div class="card">
+      <strong>Después (Esquema Dinámico)</strong>
+      <p>Nueva tabla <code>tecnicos</code>:<br>
+      <code>id</code>, <code>nombre</code>, <code>especialidad</code>, <code>activo</code><br>
+      Nueva tabla <code>cotizacion_reparto</code>:<br>
+      <code>cotizacion_id</code>, <code>tecnico_id</code>, <code>monto_anticipo</code><br>
+      <em>Cada taller puede registrar 1, 5, 20 o más técnicos con sus propias especialidades.</em></p>
+    </div>
+  </div>
+
+  <p><strong>Estrategia de Migración Transparente:</strong> Se ejecuta un script SQL de migración que lee los registros de Sergio, Ricardo y Tomás, los inserta como los primeros técnicos en la tabla <code>tecnicos</code>, vincula los montos a la tabla relacional y crea vistas de compatibilidad para garantizar que las cotizaciones viejas sigan cuadrando al centavo.</p>
+</div>
+
+<!-- PÁGINA 4: RENDIMIENTO, ESCALABILIDAD & SEGURIDAD -->
+<div class="page-break">
+  <div class="running-header">
+    <span>Plan Maestro de Modernización</span>
+    <span>4. Rendimiento & 5. Escalabilidad & 6. Seguridad</span>
+  </div>
+
+  <h2><span class="num">4</span> Optimización y Rendimiento de Alto Impacto</h2>
+  <div class="grid-3">
+    <div class="card">
+      <strong>Caché y OPcache</strong>
+      <p>Habilitación de Zend OPcache en PHP 8.2 para compilar scripts en memoria RAM, reduciendo el tiempo de respuesta del servidor de 180ms a menos de 25ms.</p>
+    </div>
+    <div class="card">
+      <strong>Optimización de Imágenes</strong>
+      <p>Compresión WebP automática para fotos de vehículos en recepción y evidencias, reduciendo el almacenamiento y ancho de banda en un 75%.</p>
+    </div>
+    <div class="card">
+      <strong>Indexación SQL</strong>
+      <p>Creación de índices compuestos en MySQL en <code>(fecha, estado, cliente)</code> para que las búsquedas de miles de cotizaciones respondan en microsegundos.</p>
+    </div>
+  </div>
+
+  <h2><span class="num">5</span> Arquitectura de Escalabilidad Híbrida (Nube + Miniservidor Offline)</h2>
+  <p>Para vender el software a talleres mecánicos en México y Latinoamérica, depender al 100% de internet es inviable: si el taller se queda sin luz o internet, no pueden dejar de recibir autos ni de cobrar.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Modo Operativo</th>
+        <th>Dónde corre</th>
+        <th>Ventajas Clave</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Modo 1: Local / Miniservidor</strong></td>
+        <td>Raspberry Pi / Mini PC dentro del taller</td>
+        <td><strong>Autonomía 100% offline.</strong> No requiere internet. Velocidad instantánea en la red Wi-Fi del taller. Las tabletas y computadoras del taller vuelan.</td>
+      </tr>
+      <tr>
+        <td><strong>Modo 2: Nube Centralizada (SaaS)</strong></td>
+        <td>Servidor VPS en la nube (Docker / Hetzner / AWS)</td>
+        <td>Acceso global desde cualquier sucursal, respaldos automáticos diarios y cero mantenimiento de hardware para el taller.</td>
+      </tr>
+      <tr>
+        <td><strong>Modo 3: Híbrido con Sync</strong></td>
+        <td>Local con enlace Tailscale / Cloudflare</td>
+        <td>Opera localmente a velocidad máxima, pero sincroniza respaldos y firmas digitales con tu miniservidor central cada vez que detecta conexión.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2><span class="num">6</span> Seguridad y Protección de Datos</h2>
+  <ul>
+    <li><strong>Sellado Criptográfico SHA-256 en Firmas:</strong> Cuando el cliente firma su orden digitalmente por WhatsApp, se genera un hash criptográfico del contenido exacto cotizado. Si alguien intenta alterar un precio después de firmado, el sistema invalida la firma automáticamente para respaldo jurídico del taller.</li>
+    <li><strong>Aislamiento de Sesiones y Protección Web:</strong> Cookies blindadas con atributos <code>HttpOnly</code>, <code>SameSite=Lax</code>, tokens CSRF obligatorios en cada formulario para prevenir ataques externos y sanitización PDO estricta contra SQL Injection.</li>
+    <li><strong>Roles de Usuario Granulares:</strong> Administrador (acceso total a finanzas, costos reales y caja), Asesor de Servicio (solo cotizar, crear clientes y recibir autos), Mecánico (solo ver tareas asignadas y estatus de trabajo).</li>
+  </ul>
+</div>
+
+<!-- PÁGINA 5: MOTOR DE LICENCIAS, MODELO DE NEGOCIO Y HOJA DE RUTA -->
+<div>
+  <div class="running-header">
+    <span>Plan Maestro de Modernización</span>
+    <span>7. Motor de Licencias & Hoja de Ruta</span>
+  </div>
+
+  <h2><span class="num">7</span> Motor de Licenciamiento y Modelo Comercial</h2>
+  <p>El sistema contará con un esquema de protección y activación por licencias criptográficas que te permitirá venderlo en modalidad de suscripción o pago único.</p>
+
+  <div class="grid-2">
+    <div class="card">
+      <strong>Clave de Licencia Cifrada (Token JWT / RSA)</strong>
+      <p>Cada taller recibe una clave única que contiene:<br>
+      • Razón Social del Taller y RFC.<br>
+      • Plan contratado (Básico / Pro / Full).<br>
+      • Fecha límite de vigencia.<br>
+      • Huella digital del equipo (Hardware ID / MAC Address) para evitar que compartan el sistema sin pagar.</p>
+    </div>
+    <div class="card">
+      <strong>Validación Híbrida con Tolerancia Offline</strong>
+      <p>El sistema valida la licencia localmente mediante firma matemática. No requiere conexión permanente a tu servidor; valida con un <em>heartbeat</em> cada 15 a 30 días, permitiendo que el taller trabaje sin interrupciones incluso si se cae su internet.</p>
+    </div>
+  </div>
+
+  <h3>Niveles de Licencia Sugeridos para la Venta</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Nivel</th>
+        <th>Módulos Incluidos</th>
+        <th>Público Objetivo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="pill pill-blue">Plan Starter</span></td>
+        <td>Cotizador rápido, cotizaciones ilimitadas, generación de PDFs con logo propio, recepción con fotos y firma digital por WhatsApp.</td>
+        <td>Talleres chicos, detalladores o mecánicos independientes.</td>
+      </tr>
+      <tr>
+        <td><span class="pill pill-green">Plan Taller Pro</span></td>
+        <td>Todo Starter + Control de inventario con recetas automáticas, módulo de compras a proveedores, caja diaria, gastos y reportes de utilidad.</td>
+        <td>Talleres mecánicos medianos con 3 a 10 empleados.</td>
+      </tr>
+      <tr>
+        <td><span class="pill pill-purple">Plan Enterprise</span></td>
+        <td>Todo Pro + Soporte multisucursal, API para app móvil, módulo de IA para lectura de cotizaciones en PDF y soporte prioritario.</td>
+        <td>Cadenas de talleres, centros de servicio automotriz y agencias.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2><span class="num">8</span> Hoja de Ruta de Implementación Inmediata</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Fase</th>
+        <th>Entregable</th>
+        <th>Impacto</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Fase 1</strong></td>
+        <td><strong>Rediseño Visual iOS</strong> del Layout global, Sidebar y Dashboard</td>
+        <td>Elimina la saturación actual; el sistema luce profesional y moderno de inmediato.</td>
+      </tr>
+      <tr>
+        <td><strong>Fase 2</strong></td>
+        <td><strong>Módulo de Ajustes de Marca Blanca</strong> (Logo, datos, cuentas bancarias)</td>
+        <td>Desvincula completamente la marca SRNU y permite personalizar cualquier taller.</td>
+      </tr>
+      <tr>
+        <td><strong>Fase 3</strong></td>
+        <td><strong>Migración de Base de Datos</strong> a Técnicos Dinámicos</td>
+        <td>Permite a cada taller dar de alta a sus propios empleados sin romper históricos.</td>
+      </tr>
+      <tr>
+        <td><strong>Fase 4</strong></td>
+        <td><strong>Implementación del Motor de Licencias</strong> (Activador y validador)</td>
+        <td>Deja el software listo para venderse comercialmente con control de pagos y vigencia.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout" style="margin-top:25px; text-align:center;">
+    <strong>Sistema Cotizador Pro · Plataforma Integral de Gestión Automotriz</strong>
+    <p>Documento técnico y estratégico generado para CIL Services · Noviembre 2026</p>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,7 @@
+CORRECCIÓN DESCARGA PDF
+=======================
+- Refresca el tamaño del PDF después de insertar el respaldo recuperable.
+- Evita Content-Length desactualizado y PDFs truncados/corruptos.
+- Limpia buffers antes de enviar los bytes del PDF.
+- Usa nombre ASCII de respaldo + filename*=UTF-8 para nombres con acentos.
+- Mantiene Ver PDF (inline) y Descargar PDF (attachment).

@@ -1,0 +1,15 @@
+#pago-tarjeta-section .srnu-msi-badge{display:inline-block;padding:5px 10px;margin-left:7px;border-radius:999px;background:#eef4ff;color:#174ea6;font-size:12px}
+#pago-tarjeta-section .srnu-msi-note{font-size:12px;line-height:1.5;color:#64748b;margin:7px 0}
+#pago-tarjeta-section .srnu-msi-one{display:flex;gap:9px;align-items:center;margin:12px 0;font-weight:700}
+#pago-tarjeta-section .srnu-msi-bank{border:1px solid #dce4ed;background:#fff;border-radius:10px;padding:14px;margin:12px 0}
+#pago-tarjeta-section .srnu-msi-bank h4{margin:0 0 10px;color:#172033;font-size:15px}
+#pago-tarjeta-section .srnu-msi-bbva{border-color:#8db2fa;background:#f4f8ff}
+#pago-tarjeta-section .srnu-msi-bank[hidden]{display:none!important}
+#pago-tarjeta-section .srnu-msi-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+#pago-tarjeta-section .srnu-msi-plan{border:1px solid #dce4ed;border-radius:8px;padding:11px;background:#fff;min-width:0}
+#pago-tarjeta-section .srnu-msi-plan strong{display:block;font-size:13px}
+#pago-tarjeta-section .srnu-msi-amount{display:block;font-size:17px;font-weight:800;margin:5px 0;color:#172033}
+#pago-tarjeta-section .srnu-msi-monthly,#pago-tarjeta-section .srnu-msi-limit{display:block;font-size:11px;line-height:1.4;color:#64748b}
+#pago-tarjeta-section .srnu-msi-limit{margin-top:4px;color:#92400e}
+@media(max-width:700px){#pago-tarjeta-section .srnu-msi-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:400px){#pago-tarjeta-section .srnu-msi-grid{grid-template-columns:1fr}}

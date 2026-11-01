@@ -1,0 +1,37 @@
+SRNU CUSTOM — CONFIGURACIÓN LOCAL PREMIUM
+
+UBICACIÓN RECOMENDADA
+C:\xampp\htdocs\srnu sql\
+
+ACCESO
+http://localhost/srnu%20sql/
+
+REQUISITOS
+- XAMPP
+- Apache activo
+- MySQL activo
+- Base de datos: srnu_cotizador
+
+Esta edición es LOCAL:
+- No requiere hosting.
+- No requiere dominio.
+- No requiere cuenta de acceso.
+- Abre directamente el Dashboard.
+- Mantiene el diseño premium responsive.
+
+IMPORTANTE
+Antes de reemplazar tu proyecto anterior, exporta un respaldo de la base srnu_cotizador desde phpMyAdmin.
+Las migraciones de nuevas tablas/columnas se ejecutan automáticamente al abrir el sistema.
+
+============================================================
+IA LOCAL GRATUITA (OLLAMA + QWEN3-VL)
+============================================================
+1. Ejecuta INSTALAR_IA_LOCAL.bat.
+2. El modelo predeterminado es qwen3-vl:4b-instruct.
+3. Abre http://localhost/srnu%20sql/ia_local.php y pulsa Probar IA ahora.
+4. Si no quieres usar IA, no es obligatorio instalar nada: el ERP mantiene el
+   buscador tradicional y la recuperacion PDF por respaldo/texto.
+5. Para PDFs escaneados se recomienda Poppler/pdftoppm. El instalador intenta
+   instalarlo automaticamente con winget.
+
+La configuracion se puede cambiar en config/ai_local_config.php.

@@ -1,0 +1,150 @@
+/* SRNU CUSTOM · Documento continuo, sin alturas ni saltos de hoja fijos. */
+.srnu-documento-fluido{font-family:Arial,Helvetica,sans-serif;color:#172033;font-size:12px;line-height:1.45;overflow:visible!important;padding:22px 30px!important;max-width:900px;background:#fff;counter-reset:document-section}
+.srnu-documento-fluido .document-running-header{display:block;margin-bottom:14px}
+.document-brand-row{display:flex;justify-content:space-between;align-items:center;gap:18px;border-bottom:2px solid #1769d9;padding:0 0 10px}
+.document-brand-text strong{display:block;font-size:16px;letter-spacing:1.4px;color:#111827}
+.document-brand-text small{display:block;font-size:10px;color:#5a6475;margin-top:3px;overflow-wrap:anywhere}
+.document-brand-logos{display:flex;align-items:center;gap:10px;flex:none}
+.document-brand-logos .document-logo{display:flex;align-items:center;justify-content:center;width:100px;height:48px;border-radius:6px;background:#fff;border:1px solid #e2e7ee;padding:5px;box-sizing:border-box}
+.document-brand-logos .document-logo.amw{background:#101010;border-color:#101010}
+.document-brand-logos img{max-width:100%;max-height:100%;object-fit:contain;display:block}
+.srnu-documento-fluido .print-only-label,.srnu-documento-fluido .first-page-brand-logos,.srnu-documento-fluido .logos-header,.srnu-documento-fluido .srnu-only-logo,.srnu-documento-fluido .footer-banner,.srnu-documento-fluido .segunda-header{display:none!important}
+.srnu-documento-fluido .banner{min-height:0!important;margin:0 0 12px!important;padding:12px 15px!important;background:#f1f5fa!important;color:#152039!important;clip-path:none!important;border:1px solid #dce4ef;border-radius:8px;break-inside:avoid}
+.srnu-documento-fluido .banner::after{display:none!important}
+.srnu-documento-fluido .cliente-datos p{font-size:12px!important;line-height:1.5;margin:2px 0!important;overflow-wrap:anywhere}
+.srnu-documento-fluido .titulo-principal{margin:14px 0 9px!important;padding:0!important;text-align:left!important}
+.srnu-documento-fluido .titulo-principal h1{font-size:23px!important;line-height:1.2;letter-spacing:.4px!important;margin:0!important;color:#111827}
+.srnu-documento-fluido .titulo-principal p{font-size:12px!important;margin:5px 0 0!important}
+.srnu-documento-fluido .titulo-orden{margin:12px 0 8px!important;padding:0!important;text-align:left!important}
+.srnu-documento-fluido .titulo-orden h1{font-size:22px!important;line-height:1.25;margin:0!important;letter-spacing:.4px!important}
+.srnu-documento-fluido .meta-row{padding:0!important;margin:0 0 9px!important;gap:12px;font-size:11px!important;line-height:1.45;flex-wrap:wrap}
+.srnu-documento-fluido .contenido{padding:0!important}
+.srnu-documento-fluido .segunda-hoja,.srnu-documento-fluido .tercera-hoja{min-height:0!important;height:auto!important;margin:0!important;padding:0!important;overflow:visible!important;position:static!important;border-top:0!important;break-before:auto!important;break-after:auto!important;page-break-before:auto!important;page-break-after:auto!important;break-inside:auto!important}
+.srnu-documento-fluido .segunda-titulo,.srnu-documento-fluido .tercera-titulo{margin:18px 0 10px!important}
+.srnu-documento-fluido .segunda-titulo h1,.srnu-documento-fluido .tercera-titulo h1{font-size:18px!important;line-height:1.25;margin:0!important}
+.srnu-documento-fluido .segunda-titulo p,.srnu-documento-fluido .tercera-titulo p{font-size:11px!important;margin:4px 0 0!important;line-height:1.4}
+.srnu-documento-fluido .seccion-titulo{gap:9px!important;margin:12px 0 7px!important;padding-bottom:6px!important;border-bottom:1px solid #cbd5e1!important;break-inside:avoid!important;break-after:avoid!important;page-break-after:avoid!important}
+.srnu-documento-fluido .seccion-titulo{counter-increment:document-section}
+.srnu-documento-fluido .seccion-titulo>span{font-size:0!important;line-height:1!important;padding:0!important;min-width:25px;width:auto!important;flex:none;color:#1769d9!important;background:none!important;border:0!important;box-shadow:none!important}
+.srnu-documento-fluido .seccion-titulo>span::before{content:counter(document-section,decimal-leading-zero);font-size:16px}
+.srnu-documento-fluido .seccion-titulo strong{font-size:12px!important;line-height:1.3;letter-spacing:.3px!important;color:#172033}
+.srnu-documento-fluido .seccion-titulo small{font-size:10px!important;line-height:1.4;display:block;margin-top:3px;color:#64748b}
+.srnu-documento-fluido table.cotizacion{width:100%!important;border-collapse:collapse;table-layout:fixed;font-size:11px!important;margin:0}
+.srnu-documento-fluido table.cotizacion thead{display:table-header-group;break-inside:avoid}
+.srnu-documento-fluido table.cotizacion thead th{background:#172033!important;color:white!important;padding:8px 7px!important;font-size:10px!important;line-height:1.3}
+.srnu-documento-fluido table.cotizacion tbody td{padding:7px!important;font-size:11px!important;line-height:1.45!important;vertical-align:top;overflow-wrap:anywhere;border-bottom:1px solid #e2e7ee}
+.srnu-documento-fluido table.cotizacion tbody tr{break-inside:avoid!important;page-break-inside:avoid!important}
+.srnu-documento-fluido table.cotizacion th:first-child{width:56%!important}
+.srnu-documento-fluido table.cotizacion th:nth-child(2){width:9%!important}
+.srnu-documento-fluido table.cotizacion th:nth-child(3),.srnu-documento-fluido table.cotizacion th:nth-child(4){width:17.5%!important}
+.srnu-documento-fluido .producto-foto-pdf{width:82px!important;height:58px!important;max-height:58px;object-fit:contain;flex:none}
+.srnu-documento-fluido .producto-con-foto{gap:9px!important;align-items:flex-start}
+.srnu-documento-fluido .responsables-pdf{font-size:9px!important;line-height:1.35;margin-top:4px!important;color:#667085}
+.srnu-documento-fluido .totales{width:300px!important;max-width:100%;margin:10px 0 12px auto!important;padding:0!important;break-inside:avoid!important;page-break-inside:avoid!important}
+.srnu-documento-fluido .totales .fila{font-size:12px!important;margin:0!important;padding:5px 8px!important;line-height:1.4}
+.srnu-documento-fluido .totales .total-final{font-size:16px!important;background:#edf4ff!important;color:#123b70!important;border-top:2px solid #1769d9!important;margin-top:4px!important;padding:9px 8px!important}
+.srnu-documento-fluido .resumen-importante{margin:12px 0!important;padding:10px 12px!important;border:1px solid #d8e5f4;border-radius:7px;background:#f5f8fc!important;break-inside:avoid}
+.srnu-documento-fluido .resumen-importante,.srnu-documento-fluido .segunda-titulo,.srnu-documento-fluido .tercera-titulo{display:none!important}
+.srnu-documento-fluido .resumen-importante strong{font-size:11px!important}
+.srnu-documento-fluido .resumen-importante p{font-size:11px!important;line-height:1.45;margin:3px 0 0!important}
+.srnu-documento-fluido .resumen-icono{font-size:16px!important;width:25px!important;height:25px!important;flex:none}
+.srnu-documento-fluido .pago-principal{display:grid!important;grid-template-columns:1.15fr 1fr;gap:10px!important;margin:0 0 12px!important;break-inside:avoid!important;page-break-inside:avoid!important}
+.srnu-documento-fluido .pago-total{grid-column:1/-1;display:flex!important;justify-content:space-between;align-items:center;gap:12px;margin:0!important;padding:8px 11px!important;background:#f6f8fb;border:1px solid #e0e6ef;border-radius:6px}
+.srnu-documento-fluido .pago-total span{font-size:11px!important;margin:0!important}
+.srnu-documento-fluido .pago-total strong{font-size:19px!important;line-height:1.2}
+.srnu-documento-fluido .anticipo-box{display:grid!important;grid-template-columns:auto 1fr;column-gap:14px;row-gap:4px;margin:0!important;padding:11px!important;min-height:0!important;border-radius:8px!important}
+.srnu-documento-fluido .anticipo-label,.srnu-documento-fluido .anticipo-texto{grid-column:1/-1}
+.srnu-documento-fluido .anticipo-label{font-size:10px!important;letter-spacing:.5px!important}
+.srnu-documento-fluido .anticipo-porcentaje{font-size:20px!important;margin:0!important;line-height:1.2;align-self:center}
+.srnu-documento-fluido .anticipo-monto{font-size:22px!important;line-height:1.2;margin:0!important;text-align:right;align-self:center}
+.srnu-documento-fluido .anticipo-texto{font-size:10px!important;line-height:1.45!important;margin-top:3px!important}
+.srnu-documento-fluido .saldo-box{display:flex!important;justify-content:space-between;align-items:center;gap:10px;margin:0!important;padding:12px!important;border:1px solid #dbe3ed!important;border-radius:8px;background:#f7f9fc}
+.srnu-documento-fluido .saldo-box span{font-size:11px!important;line-height:1.35}
+.srnu-documento-fluido .saldo-box strong{font-size:22px!important;line-height:1.2;margin-top:7px!important}
+.srnu-documento-fluido .saldo-porcentaje{font-size:20px!important;line-height:1.2;margin:0!important}
+.srnu-documento-fluido .cuentas-transferencia{padding:12px!important;margin:12px 0!important;background:#fff;border:1px solid #dce4ed;border-radius:8px;break-inside:avoid!important;page-break-inside:avoid!important}
+.srnu-documento-fluido .cuentas-transferencia-header{min-height:0!important;gap:14px!important;margin:0 0 9px!important}
+.srnu-documento-fluido .cuentas-transferencia-header strong{font-size:11px!important;line-height:1.35}
+.srnu-documento-fluido .cuentas-transferencia-header span{font-size:9px!important;line-height:1.4;max-width:330px}
+.srnu-documento-fluido .bank-grid{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px!important;margin:0!important}
+.srnu-documento-fluido .bank-card{width:auto!important;min-width:0!important;margin:0!important;flex:none!important;border:1px solid #dce3ec!important;break-inside:avoid!important}
+.srnu-documento-fluido .cuentas-transferencia .bank-grid .bank-card:last-child{grid-column:auto!important;flex:none!important;width:auto!important}
+.srnu-documento-fluido .bank-header{padding:8px!important;min-height:0!important;gap:6px;align-items:flex-start;flex-direction:column}
+.srnu-documento-fluido .bank-header strong{font-size:11px!important;line-height:1.3}
+.srnu-documento-fluido .bank-header span{font-size:8px!important;line-height:1.35;text-align:left}
+.srnu-documento-fluido .bank-info{display:block!important;padding:8px!important}
+.srnu-documento-fluido .bank-info div{display:block!important;margin-bottom:6px}
+.srnu-documento-fluido .cuentas-transferencia .bank-info>div{width:auto!important;flex:none!important}
+.srnu-documento-fluido .bank-info label{display:block;font-size:8px!important;line-height:1.4}
+.srnu-documento-fluido .bank-info strong{display:block;font-size:10px!important;line-height:1.4;overflow-wrap:anywhere}
+.srnu-documento-fluido .bank-info .account-number{font-size:11px!important;letter-spacing:0!important;white-space:nowrap}
+.srnu-documento-fluido .bank-responsible{padding-top:6px!important;margin:0!important}
+.srnu-documento-fluido .bank-responsible span{font-size:8px!important}
+.srnu-documento-fluido .bank-responsible strong{font-size:9px!important}
+.srnu-documento-fluido .payment-warning{padding:8px 10px!important;margin-top:9px!important;font-size:10px!important;line-height:1.45!important;break-inside:avoid}
+.srnu-documento-fluido .msi-box{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));padding:0!important;margin:0 0 12px!important;break-inside:avoid!important;page-break-inside:avoid!important;border:1px solid #dce4ed;border-radius:7px;overflow:visible!important}
+.srnu-documento-fluido .msi-box>div:not(.msi-row){grid-column:1/-1}
+.srnu-documento-fluido .msi-box[data-msi-count="1"]{grid-template-columns:1fr}
+.srnu-documento-fluido .msi-box[data-msi-count="3"],.srnu-documento-fluido .msi-box[data-msi-count="5"],.srnu-documento-fluido .msi-box[data-msi-count="6"]{grid-template-columns:repeat(3,minmax(0,1fr))}
+.srnu-documento-fluido .msi-box>.msi-row.msi-no-disponible{grid-column:1/-1}
+.srnu-documento-fluido .msi-box.msi-bbva-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+.srnu-documento-fluido .msi-box.msi-bbva-grid[data-msi-count="1"]{grid-template-columns:1fr!important}
+.srnu-documento-fluido .msi-box.msi-bbva-grid[data-msi-count="3"]{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+.srnu-documento-fluido .msi-box>.tarjeta-una{grid-column:1/-1}
+.srnu-documento-fluido .msi-row.tarjeta-una{padding:4px 11px!important}
+.srnu-documento-fluido .msi-bbva-grid>.msi-row:not(.tarjeta-una){padding:7px 11px!important}
+.srnu-documento-fluido .tarjeta-una .msi-monto{display:flex;flex-direction:row;align-items:center;gap:10px}
+.srnu-documento-fluido .tarjeta-una .msi-mensual{margin-top:0!important}
+.srnu-documento-fluido .msi-document-note{font-size:9px;line-height:1.4;color:#64748b;padding:4px 10px 0}
+.srnu-documento-fluido .msi-limite-aviso{display:block;font-size:8px;line-height:1.3;color:#92400e;margin-top:3px}
+.srnu-documento-fluido .msi-title{font-size:11px!important;padding:9px 11px!important;line-height:1.4;break-after:avoid!important;page-break-after:avoid!important}
+.srnu-documento-fluido .msi-row{gap:10px;padding:10px 11px!important;font-size:11px!important;line-height:1.4;border-right:1px solid #e2e7ee;break-inside:avoid!important;page-break-inside:avoid!important;min-width:0}
+.srnu-documento-fluido .msi-row>span{min-width:0}
+.srnu-documento-fluido .msi-monto{flex:none}
+.srnu-documento-fluido .msi-row strong{font-size:14px!important;line-height:1.25}
+.srnu-documento-fluido .msi-mensual{font-size:10px!important;line-height:1.4;margin-top:3px!important}
+.srnu-documento-fluido .msi-no-disponible{font-size:10px!important;line-height:1.45;break-inside:avoid}
+.srnu-documento-fluido .document-card-not-selected{display:none!important}
+.srnu-documento-fluido .document-responsables,.srnu-documento-fluido .document-aceptacion{break-inside:avoid!important;page-break-inside:avoid!important}
+.srnu-documento-fluido .anuncio-pedido{padding:11px!important;margin:12px 0!important;break-inside:avoid!important;page-break-inside:avoid!important;border-radius:8px!important}
+.srnu-documento-fluido .anuncio-pedido>div{font-size:11px!important;line-height:1.5!important;margin:4px 0!important}
+.srnu-documento-fluido .anuncio-pedido .anuncio-titulo{font-size:12px!important;line-height:1.35;margin:0 0 7px!important}
+.srnu-documento-fluido .anuncio-sub{font-size:10px!important;line-height:1.5!important}
+.srnu-documento-fluido .team-grid{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px!important;margin-bottom:14px;break-inside:avoid!important}
+.srnu-documento-fluido .team-card{padding:10px 8px!important;min-width:0;break-inside:avoid!important}
+.srnu-documento-fluido .team-card strong{font-size:11px!important;line-height:1.35}
+.srnu-documento-fluido .team-card span{font-size:10px!important;line-height:1.4;margin-top:4px!important}
+.srnu-documento-fluido .firmas{display:grid!important;grid-template-columns:1fr 1fr;gap:24px!important;margin:10px 0 12px!important;break-inside:avoid!important;page-break-inside:avoid!important}
+.srnu-documento-fluido .firmas>div{padding-top:14px;min-width:0}
+.srnu-documento-fluido .firmas hr{margin:18px 0 7px!important;border:0;border-top:1px solid #475569}
+.srnu-documento-fluido .firmas p{font-size:11px!important;margin:0!important;line-height:1.4}
+.srnu-documento-fluido .firma-digital-img{max-width:100%!important;height:52px!important;object-fit:contain;margin:0 auto 2px!important}
+.srnu-documento-fluido .firmas>div:has(.firma-digital-img){padding-top:0}
+.srnu-documento-fluido .firmas>div:has(.firma-digital-img) hr{margin-top:6px!important}
+.srnu-documento-fluido .firma-digital-meta{font-size:9px!important;line-height:1.45;overflow-wrap:anywhere}
+.srnu-documento-fluido .footer-info{display:grid;grid-template-columns:1fr auto;column-gap:18px;row-gap:3px;padding:10px 0 0!important;margin:0!important;border-top:1px solid #dce4ed;font-size:10px!important;line-height:1.5!important;text-align:left!important;break-inside:avoid!important}
+.srnu-documento-fluido .footer-info strong{font-size:11px!important}
+.srnu-documento-fluido .footer-info .document-contact-address{grid-column:1/-1}
+@media(max-width:650px){.srnu-documento-fluido{padding:16px!important}.document-brand-row{gap:8px}.document-brand-text strong{font-size:13px}.document-brand-logos{gap:5px}.document-brand-logos .document-logo{width:70px;height:40px}.srnu-documento-fluido .bank-grid{grid-template-columns:1fr}.srnu-documento-fluido .pago-principal{grid-template-columns:1fr}.srnu-documento-fluido .team-grid{grid-template-columns:1fr}.srnu-documento-fluido .meta-row{gap:8px}}
+@media screen and (max-width:650px){.srnu-documento-fluido .msi-box,.srnu-documento-fluido .footer-info{grid-template-columns:1fr}.srnu-documento-fluido .footer-info .document-contact-address{grid-column:auto}}
+@media screen and (max-width:650px){.srnu-documento-fluido .msi-box[data-msi-count]{grid-template-columns:1fr}}
+@media print{
+ @page{size:Letter portrait;margin:22mm 11mm 13mm;@bottom-right{content:"Página " counter(page) " de " counter(pages);font-family:Arial,Helvetica,sans-serif;font-size:8pt;color:#667085}@bottom-left{content:"SRNU CUSTOM · Modificación Automotriz";font-family:Arial,Helvetica,sans-serif;font-size:8pt;color:#667085}}
+ .srnu-documento-fluido{width:100%!important;max-width:none!important;padding:0!important;margin:0!important;box-shadow:none!important;background:#fff!important;overflow:visible!important}
+ .srnu-documento-fluido .document-running-header{display:none!important}
+ .srnu-documento-fluido .page-break{display:none!important;break-before:auto!important;break-after:auto!important;page-break-after:auto!important}
+ .srnu-documento-fluido .segunda-hoja,.srnu-documento-fluido .tercera-hoja{break-before:auto!important;break-after:auto!important;page-break-before:auto!important;page-break-after:auto!important}
+ .srnu-documento-fluido .segunda-titulo,.srnu-documento-fluido .tercera-titulo{break-inside:avoid!important;break-after:avoid!important;page-break-after:avoid!important}
+ .srnu-documento-fluido p{orphans:3;widows:3}
+ .srnu-documento-fluido .bank-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .srnu-documento-fluido .pago-principal{grid-template-columns:1.15fr 1fr}
+ /* El total ya aparece al cierre del detalle: no repetir la misma cifra. */
+ .srnu-documento-fluido .pago-total{display:none!important}
+ /* Las cuentas ya muestran responsable y área; no repetir las mismas tarjetas. */
+ .srnu-documento-fluido .document-responsables{display:none!important}
+ /* Mantener condiciones y aceptación juntas evita una última hoja solo de firmas. */
+ .srnu-documento-fluido .document-condiciones-cierre{break-inside:avoid!important;page-break-inside:avoid!important}
+ .srnu-documento-fluido .team-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .document-brand-logos .document-logo{width:100px;height:48px}
+ .document-brand-logos,.srnu-documento-fluido table.cotizacion th,.srnu-documento-fluido .anticipo-box,.srnu-documento-fluido .bank-header{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
+}

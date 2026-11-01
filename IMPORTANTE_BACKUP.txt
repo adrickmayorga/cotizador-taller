@@ -1,0 +1,7 @@
+ANTES DE ACTUALIZAR
+1. Haz un respaldo de la base de datos srnu_cotizador en phpMyAdmin.
+2. Copia tu carpeta actual de C:\xampp\htdocs\srnu sql\ por seguridad.
+3. Sustituye los archivos por esta versión.
+4. Abre cotizaciones.php. La primera carga actualizará automáticamente la estructura de MySQL.
+
+Tus cotizaciones anteriores se conservan. Los nuevos campos usan valores predeterminados cuando una cotización vieja no tenía esa información.

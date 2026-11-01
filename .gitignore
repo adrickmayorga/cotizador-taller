@@ -1,0 +1,15 @@
+# SRNU CUSTOM - archivos que no deben subirse al repositorio
+/config/database.local.php
+/.env
+/.env.*
+/uploads/*
+!/uploads/.htaccess
+/pdf/*
+!pdf/.htaccess
+*.log
+/respaldo*.sql
+/backup*.sql
+/.idea/
+/.vscode/
+.DS_Store
+Thumbs.db

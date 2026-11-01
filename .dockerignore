@@ -1,0 +1,12 @@
+.git
+.gitignore
+*.bat
+*.ps1
+*.bak
+CONFIGURACION.txt
+ERP_LOCAL_COMPLETO.txt
+README.txt
+IA_LOCAL_LEEME.txt
+LOCAL_PREMIUM.txt
+CORRECCION_*.txt
+IMPORTANTE_BACKUP.txt

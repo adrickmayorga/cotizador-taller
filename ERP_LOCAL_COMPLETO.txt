@@ -1,0 +1,61 @@
+SRNU CUSTOM · SISTEMA LOCAL PREMIUM / ERP
+==========================================
+
+Esta versión está pensada para XAMPP en:
+C:\xampp\htdocs\srnu sql\
+
+Abrir:
+http://localhost/srnu%20sql/
+
+ANTES DE REEMPLAZAR
+-------------------
+Haz un respaldo de la base de datos srnu_cotizador desde phpMyAdmin.
+El sistema conserva las cotizaciones existentes y crea automáticamente las tablas/columnas nuevas al abrirse.
+
+MÓDULOS PRINCIPALES
+-------------------
+1. Dashboard: resumen mensual, cobros, saldo, agenda, inventario y alertas.
+2. Cotizaciones: PDF, impresión, MSI, anticipos, responsables, versiones, pagos y estados.
+3. Agenda: ingreso/entrega, responsable, duración estimada y estado.
+4. Catálogo: precio, costo, garantía, responsables y disponibilidad.
+   - Entrega inmediata.
+   - Sobre pedido + días estimados.
+5. Inventario: stock, mínimos, costos, movimientos y recetas de insumos por servicio.
+6. Compras/proveedores: pedido, tracking, fecha estimada, cotización asociada y entrada automática a inventario al marcar Recibido.
+7. Gastos y caja: egresos, conciliación diaria y comisiones.
+8. Reparto final: objetivo, recibido y pendiente por Sergio/Ricardo/Tomás.
+9. Expediente del vehículo: placas, VIN, kilometraje, historial, pagos, garantías y fotos.
+10. Costos reales: compara costo presupuestado vs costo real y utilidad.
+11. Galería: Antes / Durante / Después y bandera para marketing.
+12. Plantillas: paquetes de servicios reutilizables.
+13. Versiones: historial y comparación entre versiones.
+14. Notas/adjuntos: información interna que no sale en el PDF.
+15. Postventa: recordatorios, garantías y seguimiento.
+16. Reportes: ventas, costos, clientes, servicios y alertas.
+17. Tema claro/oscuro: botón ◐ en la barra superior; se guarda en el navegador.
+
+AUTOMATIZACIONES
+----------------
+- Al pasar un trabajo a En proceso, se descuentan una sola vez los insumos configurados en la receta del catálogo.
+- Al marcar una compra como Recibido, los artículos ligados entran una sola vez a inventario.
+- Al marcar una orden como Entregado, se crean las garantías configuradas y recordatorios postventa.
+- La recepción del vehículo crea/actualiza su expediente permanente.
+- Duplicar cotización crea una nueva cotización sin copiar pagos ni anticipo ya recibido.
+- Ver/Imprimir PDF no genera versiones nuevas.
+
+SOBRE PEDIDO
+------------
+En Catálogo puedes definir cada concepto como Entrega inmediata o Sobre pedido.
+Los conceptos Sobre pedido guardan un número de días estimados y se muestran en la orden de trabajo.
+Si una orden contiene conceptos Sobre pedido, aparece acceso directo a Compras/Pedidos.
+Esta clasificación es interna y no se imprime en el PDF del cliente.
+
+INVENTARIO POR SERVICIO
+-----------------------
+Catálogo -> "Insumos" permite definir qué inventario consume cada servicio.
+Ejemplo: Detallado de motor puede consumir 0.20 botella de MotorPlast.
+Cuando la orden pasa a En proceso, esa receta se descuenta según la cantidad vendida.
+
+NOTA
+----
+El sistema sigue siendo local. No requiere dominio, hosting, GitHub ni internet para funcionar en XAMPP.

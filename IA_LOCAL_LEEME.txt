@@ -1,0 +1,50 @@
+SRNU CUSTOM - IA LOCAL GRATUITA
+================================
+
+Esta version usa Ollama en la MISMA computadora. No requiere una API de pago ni envia
+los datos de tus clientes a un proveedor externo de IA.
+
+MODELO PREDETERMINADO
+- qwen3-vl:4b-instruct
+- Texto + imagen
+- Aproximadamente 3.3 GB de descarga del modelo.
+
+INSTALACION RAPIDA
+1. Ejecuta INSTALAR_IA_LOCAL.bat.
+2. Espera a que termine la descarga del modelo.
+3. Abre XAMPP y enciende Apache + MySQL.
+4. Entra a http://localhost/srnu%20sql/ia_local.php
+5. Pulsa "Probar IA ahora".
+
+QUE MEJORA
+- Importar PDF:
+  * PDFs SRNU modernos: usa el respaldo estructurado interno (es lo mas fiable).
+  * PDFs antiguos con texto: Qwen organiza cliente, auto, conceptos, precios, MSI,
+    anticipo, responsables, garantia y tiempos.
+  * PDFs escaneados: si pdftoppm/Poppler esta instalado, convierte hasta 4 paginas
+    a imagen y Qwen3-VL las interpreta visualmente.
+  * Siempre muestra una pantalla de revision antes de guardar.
+
+- Asistente IA de Cotizaciones:
+  * Qwen interpreta preguntas naturales y extrae la intencion/termino.
+  * Las consultas reales a MySQL siguen usando SQL preparado por el sistema.
+  * Si Ollama esta apagado, el buscador tradicional sigue funcionando.
+
+PRIVACIDAD
+- URL de Ollama: http://127.0.0.1:11434
+- No se incluyen claves de OpenAI/Google/Anthropic.
+- Los datos se procesan localmente.
+
+CAMBIAR MODELO
+Edita config/ai_local_config.php y cambia 'model'.
+Ejemplos:
+- qwen3-vl:2b-instruct (si estuviera disponible en tu instalacion; mas ligero)
+- qwen3-vl:4b-instruct (recomendado)
+- qwen3-vl:8b-instruct (mas pesado, mejor hardware)
+
+Si cambias de modelo primero ejecuta:
+  ollama pull NOMBRE_DEL_MODELO
+
+PDF ESCANEADO
+Para vision se recomienda Poppler (pdftoppm). El instalador intenta instalarlo
+con winget. Si no queda disponible, la IA aun funciona con PDFs que tengan texto.

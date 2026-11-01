@@ -1,0 +1,5 @@
+SRNU CUSTOM - Corrección de contraste del anticipo
+
+- Se corrigió el bloque ANTICIPO YA RECIBIDO / ANTICIPO REQUERIDO que podía verse blanco sobre blanco con el tema Premium.
+- El bloque conserva fondo oscuro y texto blanco tanto en pantalla como en impresión/PDF.
+- No se modificaron cálculos, saldos, distribución, pagos ni lógica de cotización.
