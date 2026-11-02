@@ -1,170 +1,830 @@
-:root{
-  --srnu-bg:#08111f;
-  --srnu-bg-2:#0d1728;
-  --srnu-card:rgba(255,255,255,.94);
-  --srnu-card-dark:rgba(15,23,42,.82);
-  --srnu-text:#0f172a;
-  --srnu-muted:#64748b;
-  --srnu-line:#dbe4ef;
-  --srnu-primary:#2563eb;
-  --srnu-primary-2:#38bdf8;
-  --srnu-success:#16a34a;
-  --srnu-warning:#f59e0b;
-  --srnu-danger:#dc2626;
-  --srnu-shadow:0 24px 70px rgba(2,8,23,.13);
-  --srnu-radius:22px;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body:not(.modo-pdf){
-  margin:0!important;
-  min-height:100vh;
-  color:var(--srnu-text);
-  background:
-    radial-gradient(circle at 12% 0%,rgba(37,99,235,.20),transparent 28rem),
-    radial-gradient(circle at 92% 8%,rgba(56,189,248,.12),transparent 24rem),
-    linear-gradient(180deg,#f8fbff 0%,#eef4fb 58%,#eaf0f7 100%)!important;
-  font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif!important;
-}
-body:not(.modo-pdf)::before{
-  content:"";position:fixed;inset:0 0 auto 0;height:270px;z-index:-1;
-  background:linear-gradient(135deg,#07111f 0%,#0b1730 52%,#0c2350 100%);
-  box-shadow:0 20px 60px rgba(2,8,23,.15)
-}
-.srnu-appbar{position:sticky;top:0;z-index:9999;padding:12px 18px;background:rgba(7,17,31,.86);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.08)}
-.srnu-appbar-inner{max-width:1480px;margin:auto;display:flex;align-items:center;gap:18px}
-.srnu-brand{display:flex;align-items:center;gap:11px;color:#fff;text-decoration:none;min-width:max-content}
-.srnu-brand img{width:38px;height:38px;border-radius:11px;object-fit:contain;background:#fff;padding:4px;box-shadow:0 8px 25px rgba(0,0,0,.2)}
-.srnu-brand strong{font-size:14px;letter-spacing:.08em}.srnu-brand span{display:block;font-size:10px;color:#94a3b8;letter-spacing:.14em;text-transform:uppercase;margin-top:2px}
-.srnu-nav{display:flex;align-items:center;gap:6px;flex:1}.srnu-nav a{color:#cbd5e1!important;background:transparent!important;border:0!important;padding:9px 12px!important;border-radius:12px!important;text-decoration:none!important;font-size:13px!important;font-weight:700!important}
-.srnu-nav a:hover,.srnu-nav a.active{color:#fff!important;background:rgba(255,255,255,.10)!important}
-.srnu-nav a.primary{margin-left:auto;background:linear-gradient(135deg,var(--srnu-primary),#1d4ed8)!important;color:#fff!important;box-shadow:0 9px 26px rgba(37,99,235,.30)}
-.srnu-user{display:flex;align-items:center;gap:8px;color:#94a3b8;font-size:12px}.srnu-user a{color:#fff;text-decoration:none;background:rgba(255,255,255,.08);padding:8px 10px;border-radius:10px}
-.srnu-menu-btn{display:none;background:rgba(255,255,255,.10);color:#fff;border:0;border-radius:11px;padding:9px 11px;font-size:18px}
-.srnu-mobile-nav{display:none;max-width:1480px;margin:10px auto 0;grid-template-columns:1fr 1fr;gap:7px}.srnu-mobile-nav.open{display:grid}.srnu-mobile-nav a{color:#e2e8f0;text-decoration:none;padding:11px 12px;border-radius:12px;background:rgba(255,255,255,.07);font-size:13px;font-weight:700}
-body:not(.modo-pdf) .wrap,body:not(.modo-pdf) .w,body:not(.modo-pdf) .form-wrap{position:relative;z-index:1;margin-top:28px!important;margin-bottom:48px!important}
-body:not(.modo-pdf) .wrap,body:not(.modo-pdf) .w{max-width:1480px!important;padding-left:18px!important;padding-right:18px!important}
-body:not(.modo-pdf) h1,body:not(.modo-pdf) h2{letter-spacing:-.025em}
-body:not(.modo-pdf) h1{font-size:clamp(28px,4vw,46px);line-height:1.04;color:#fff;margin-top:18px}
-body:not(.modo-pdf) h2{color:#0f172a}
-body:not(.modo-pdf) .top h1{color:#fff}
-body:not(.modo-pdf) .top small{color:#bfdbfe!important}
-body:not(.modo-pdf) .card,body:not(.modo-pdf) .panel,body:not(.modo-pdf) .p,body:not(.modo-pdf) .filters,body:not(.modo-pdf) .tablebox,body:not(.modo-pdf) .form-wrap{
-  border:1px solid rgba(148,163,184,.22)!important;
-  background:rgba(255,255,255,.94)!important;
-  box-shadow:var(--srnu-shadow)!important;
-  border-radius:var(--srnu-radius)!important;
-}
-body:not(.modo-pdf) .form-wrap{padding:24px!important;max-width:1180px!important}
-body:not(.modo-pdf) .cards{gap:14px!important}
-body:not(.modo-pdf) .card{padding:19px!important;overflow:hidden;position:relative}
-body:not(.modo-pdf) .card::after{content:"";position:absolute;right:-24px;top:-24px;width:90px;height:90px;border-radius:50%;background:linear-gradient(135deg,rgba(37,99,235,.10),rgba(56,189,248,.03))}
-body:not(.modo-pdf) .card b,body:not(.modo-pdf) .big{font-variant-numeric:tabular-nums;letter-spacing:-.03em}
-body:not(.modo-pdf) table{border-radius:18px;overflow:hidden;background:#fff!important}
-body:not(.modo-pdf) th{background:#0d1728!important;color:#f8fafc!important;font-size:12px;text-transform:uppercase;letter-spacing:.06em;border:0!important}
-body:not(.modo-pdf) td{border-bottom:1px solid #edf2f7!important}
-body:not(.modo-pdf) tr:hover td{background:#f8fbff}
-body:not(.modo-pdf) input,body:not(.modo-pdf) select,body:not(.modo-pdf) textarea{
-  min-height:44px;border:1px solid #cbd5e1!important;border-radius:12px!important;background:#fff!important;color:#0f172a!important;padding:10px 12px!important;outline:none;transition:.18s box-shadow,.18s border-color;font:inherit
-}
-body:not(.modo-pdf) textarea{min-height:96px}
-body:not(.modo-pdf) input:focus,body:not(.modo-pdf) select:focus,body:not(.modo-pdf) textarea:focus{border-color:#60a5fa!important;box-shadow:0 0 0 4px rgba(37,99,235,.12)!important}
-body:not(.modo-pdf) input[type=checkbox],body:not(.modo-pdf) input[type=radio]{min-height:auto;width:18px;height:18px;accent-color:var(--srnu-primary);padding:0!important}
-body:not(.modo-pdf) a.btn,body:not(.modo-pdf) .btn,body:not(.modo-pdf) button,body:not(.modo-pdf) .btn-agregar,body:not(.modo-pdf) .btn-volver-cotizaciones{
-  border-radius:12px!important;font-weight:800!important;letter-spacing:.005em;transition:transform .16s ease,box-shadow .16s ease,filter .16s ease
-}
-body:not(.modo-pdf) a.btn:hover,body:not(.modo-pdf) .btn:hover,body:not(.modo-pdf) button:hover,body:not(.modo-pdf) .btn-agregar:hover,body:not(.modo-pdf) .btn-volver-cotizaciones:hover{transform:translateY(-1px);filter:brightness(1.02)}
-body:not(.modo-pdf) .blue{background:linear-gradient(135deg,#2563eb,#1d4ed8)!important;border-color:#2563eb!important}
-body:not(.modo-pdf) .green{background:linear-gradient(135deg,#16a34a,#15803d)!important;border-color:#16a34a!important}
-body:not(.modo-pdf) .orange{background:linear-gradient(135deg,#f59e0b,#d97706)!important;border-color:#f59e0b!important;color:#111827!important}
-body:not(.modo-pdf) .danger{background:linear-gradient(135deg,#ef4444,#b91c1c)!important;border-color:#ef4444!important}
-body:not(.modo-pdf) .light{background:#fff!important;color:#0f172a!important;border-color:#dbe4ef!important}
-body:not(.modo-pdf) .tag{background:#e8f0ff!important;color:#1d4ed8!important;border:1px solid #cfe0ff;padding:5px 9px!important;font-weight:800}
-body:not(.modo-pdf) .filters{padding:16px!important;gap:10px!important}
-body:not(.modo-pdf) .actions a{border:0!important;box-shadow:0 5px 14px rgba(15,23,42,.08)}
-.srnu-page-heading{display:flex;align-items:end;justify-content:space-between;gap:16px;margin:30px 0 18px}.srnu-page-heading h1{margin:0}.srnu-page-heading p{margin:7px 0 0;color:#bfdbfe}
-.srnu-stat-accent{display:block;width:34px;height:4px;border-radius:999px;background:linear-gradient(90deg,#60a5fa,#22d3ee);margin-bottom:12px}
-.srnu-security-note{display:flex;gap:10px;align-items:flex-start;background:#eff6ff;border:1px solid #bfdbfe;color:#1e3a8a;border-radius:14px;padding:12px 14px;margin:12px 0}
-.srnu-login-shell{min-height:100vh;display:grid;place-items:center;padding:24px;background:radial-gradient(circle at top right,rgba(37,99,235,.28),transparent 34rem),linear-gradient(135deg,#050b15,#0b1830 60%,#0f2b58)}
-.srnu-login-card{width:min(430px,100%);background:rgba(255,255,255,.96);border-radius:28px;padding:28px;box-shadow:0 35px 100px rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.5)}
-.srnu-login-logo{display:flex;align-items:center;gap:13px;margin-bottom:22px}.srnu-login-logo img{width:54px;height:54px;border-radius:16px;background:#fff;padding:5px;box-shadow:0 12px 28px rgba(0,0,0,.12)}.srnu-login-logo h1{color:#0f172a!important;font-size:25px!important;margin:0!important}.srnu-login-logo p{margin:4px 0 0;color:#64748b;font-size:13px}
-.srnu-login-card label{display:block;font-size:13px;font-weight:800;color:#334155;margin:12px 0 6px}.srnu-login-card input{width:100%}.srnu-login-card button{width:100%;padding:12px 14px;border:0;color:#fff;background:linear-gradient(135deg,#2563eb,#1d4ed8);margin-top:16px}.srnu-error{background:#fff1f2;border:1px solid #fecdd3;color:#9f1239;padding:11px 12px;border-radius:12px;margin:10px 0}.srnu-ok{background:#ecfdf5;border:1px solid #bbf7d0;color:#166534;padding:11px 12px;border-radius:12px;margin:10px 0}
-@media(max-width:900px){
-  .srnu-nav,.srnu-user{display:none}.srnu-menu-btn{display:block;margin-left:auto}.srnu-appbar{padding:10px 12px}.srnu-brand img{width:34px;height:34px}.srnu-brand strong{font-size:13px}
-  body:not(.modo-pdf)::before{height:230px}
-  body:not(.modo-pdf) .wrap,body:not(.modo-pdf) .w{padding-left:12px!important;padding-right:12px!important}
-  body:not(.modo-pdf) .form-wrap{margin:18px 10px 40px!important;padding:16px!important}
-  body:not(.modo-pdf) .cards{grid-template-columns:1fr 1fr!important}
-  body:not(.modo-pdf) .grid{grid-template-columns:1fr!important}
-  body:not(.modo-pdf) .filters{grid-template-columns:1fr 1fr!important}
-  body:not(.modo-pdf) .filters .q,body:not(.modo-pdf) .filters .buttons{grid-column:1/-1!important}
-  body:not(.modo-pdf) .tablebox{border-radius:18px!important}
-}
-@media(max-width:560px){
-  body:not(.modo-pdf) h1{font-size:30px}
-  body:not(.modo-pdf) .cards{grid-template-columns:1fr!important}
-  body:not(.modo-pdf) .filters{grid-template-columns:1fr!important}
-  body:not(.modo-pdf) .filters>*{grid-column:auto!important}
-  body:not(.modo-pdf) .actions{min-width:280px!important}
-  .srnu-mobile-nav{grid-template-columns:1fr}
-}
-@media print{.srnu-appbar,.srnu-mobile-nav{display:none!important}}
-body:not(.modo-pdf) .p h1,body:not(.modo-pdf) .panel h1,body:not(.modo-pdf) .card h1,body:not(.modo-pdf) .form-wrap h1{color:#0f172a!important;font-size:clamp(24px,3vw,34px)}
-body:not(.modo-pdf) .p h2,body:not(.modo-pdf) .panel h2,body:not(.modo-pdf) .card h2{color:#0f172a!important}
-body:not(.modo-pdf) .form-group{margin-bottom:16px!important}
-body:not(.modo-pdf) .form-group>label{display:block;font-size:12px;font-weight:900;color:#475569;text-transform:uppercase;letter-spacing:.055em;margin-bottom:7px}
-body:not(.modo-pdf) .form-group input:not([type=checkbox]):not([type=radio]),body:not(.modo-pdf) .form-group select,body:not(.modo-pdf) .form-group textarea{width:100%}
-body:not(.modo-pdf) .team-grid,body:not(.modo-pdf) .resumen-interno-grid{gap:12px!important}
-body:not(.modo-pdf) .team-card,body:not(.modo-pdf) .resumen-interno-card,body:not(.modo-pdf) .msi-box{border-radius:16px!important;border:1px solid #dbe4ef!important;background:linear-gradient(180deg,#fff,#f8fbff)!important;box-shadow:0 8px 22px rgba(15,23,42,.06)!important}
-/* El bloque de anticipo forma parte del documento del cliente y conserva su contraste original. */
-body:not(.modo-pdf) .page .anticipo-box{background:#111827!important;color:#fff!important;border:0!important;border-radius:0!important;box-shadow:none!important}
-body:not(.modo-pdf) .page .anticipo-box .anticipo-label,
-body:not(.modo-pdf) .page .anticipo-box .anticipo-porcentaje,
-body:not(.modo-pdf) .page .anticipo-box .anticipo-monto{color:#fff!important}
-body:not(.modo-pdf) .page .anticipo-box .anticipo-texto{color:#d1d5db!important}
-body:not(.modo-pdf) .msi-check{background:#eff6ff!important;border:1px solid #dbeafe!important;color:#1e3a8a!important;padding:9px 13px!important}
-body:not(.modo-pdf) .seccion-titulo{border-radius:12px!important;letter-spacing:.05em}
-body:not(.modo-pdf) .form-actions-cotizador{position:sticky;bottom:12px;z-index:80;background:rgba(255,255,255,.92);backdrop-filter:blur(16px);border:1px solid #dbe4ef;border-radius:16px;padding:10px;box-shadow:0 18px 40px rgba(15,23,42,.14)}
-body:not(.modo-pdf) .form-actions-cotizador .btn{background:linear-gradient(135deg,#2563eb,#1d4ed8)!important;border:0!important;box-shadow:0 9px 24px rgba(37,99,235,.25)}
-body:not(.modo-pdf) .form-actions-cotizador .btn-volver-cotizaciones{background:#fff!important}
-@media print{
-  body:not(.modo-pdf){background:#fff!important;color:#111!important}
-  body:not(.modo-pdf)::before{display:none!important}
-  body:not(.modo-pdf) .p,body:not(.modo-pdf) .panel,body:not(.modo-pdf) .card{box-shadow:none!important;background:#fff!important}
-  body:not(.modo-pdf) h1{color:#111!important}
+/**
+ * Apple iOS / Human Interface System Stylesheet
+ * Cotizador ERP Automotriz
+ */
+
+:root {
+  /* Modo Claro (Predeterminado) */
+  --ios-bg: #f2f2f7;
+  --ios-card: #ffffff;
+  --ios-card-secondary: #f8f8fa;
+  --ios-card-elevated: #ffffff;
+  --ios-topbar-bg: rgba(255, 255, 255, 0.85);
+  --ios-sidebar-bg: rgba(255, 255, 255, 0.82);
+  --ios-border: rgba(60, 60, 67, 0.12);
+  --ios-border-focus: #0071e3;
+  --ios-text: #1d1d1f;
+  --ios-text-secondary: #515154;
+  --ios-muted: #86868b;
+  --ios-primary: #0071e3;
+  --ios-primary-hover: #0077ed;
+  --ios-primary-light: #e8f2ff;
+  --ios-success: #34c759;
+  --ios-success-light: #e3f9e5;
+  --ios-warning: #ff9500;
+  --ios-warning-light: #fff4e5;
+  --ios-danger: #ff3b30;
+  --ios-danger-light: #ffe5e5;
+  --ios-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  --ios-shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.08);
+  --ios-radius: 20px;
+  --ios-radius-btn: 12px;
+  --ios-radius-pill: 999px;
+  --ios-font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  /* Compatibilidad con variables legacy */
+  --srnu-primary: var(--ios-primary);
+  --srnu-bg: var(--ios-bg);
+  --srnu-text: var(--ios-text);
+  --srnu-radius: var(--ios-radius);
+  --srnu-shadow: var(--ios-shadow);
 }
 
-/* ===== SRNU PREMIUM LOCAL ===== */
-.srnu-local-badge{display:flex;align-items:center;gap:7px;color:#cbd5e1;background:rgba(255,255,255,.075);border:1px solid rgba(255,255,255,.10);padding:8px 11px;border-radius:999px;font-size:11px;font-weight:900;letter-spacing:.08em}
-.srnu-local-dot{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 4px rgba(34,197,94,.12)}
-body:not(.modo-pdf) .srnu-appbar{box-shadow:0 14px 42px rgba(2,8,23,.22)}
-body:not(.modo-pdf) .tablebox{overflow:auto;-webkit-overflow-scrolling:touch}
-body:not(.modo-pdf) .card,body:not(.modo-pdf) .panel{backdrop-filter:blur(14px)}
-body:not(.modo-pdf) button:active,body:not(.modo-pdf) .btn:active{transform:translateY(0) scale(.99)}
-@media(max-width:900px){.srnu-local-badge{margin-left:auto}.srnu-menu-btn{margin-left:0}}
-@media(max-width:560px){.srnu-local-badge{display:none}}
+html[data-theme="dark"] {
+  /* Modo Oscuro (Apple Dark Graphite) */
+  --ios-bg: #000000;
+  --ios-card: #1c1c1e;
+  --ios-card-secondary: #2c2c2e;
+  --ios-card-elevated: #2c2c2e;
+  --ios-topbar-bg: rgba(18, 18, 20, 0.85);
+  --ios-sidebar-bg: rgba(18, 18, 20, 0.82);
+  --ios-border: rgba(255, 255, 255, 0.10);
+  --ios-border-focus: #0a84ff;
+  --ios-text: #ffffff;
+  --ios-text-secondary: #a1a1a6;
+  --ios-muted: #8e8e93;
+  --ios-primary: #0a84ff;
+  --ios-primary-hover: #409cff;
+  --ios-primary-light: rgba(10, 132, 255, 0.15);
+  --ios-success: #30d158;
+  --ios-success-light: rgba(48, 209, 88, 0.15);
+  --ios-warning: #ffd60a;
+  --ios-warning-light: rgba(255, 214, 10, 0.15);
+  --ios-danger: #ff453a;
+  --ios-danger-light: rgba(255, 69, 58, 0.15);
+  --ios-shadow: 0 12px 36px rgba(0, 0, 0, 0.55);
+  --ios-shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.75);
+}
 
-/* ===== ERP / DARK MODE ===== */
-.srnu-theme-btn{border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.08);color:#fff;width:38px;height:38px;border-radius:12px;font-size:18px;cursor:pointer}
-.srnu-mobile-nav button{color:#e2e8f0;border:0;padding:11px 12px;border-radius:12px;background:rgba(255,255,255,.07);font-size:13px;font-weight:700;text-align:left}
-.kpi-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.kpi{background:#fff;border:1px solid #dbe4ef;border-radius:18px;padding:16px}.kpi small{color:#64748b;font-weight:800;text-transform:uppercase;letter-spacing:.06em}.kpi strong{display:block;font-size:26px;margin-top:7px}.toolbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.badge{display:inline-flex;align-items:center;padding:5px 9px;border-radius:999px;font-size:11px;font-weight:900}.badge-green{background:#dcfce7;color:#166534}.badge-orange{background:#ffedd5;color:#9a3412}.badge-blue{background:#dbeafe;color:#1d4ed8}.badge-red{background:#fee2e2;color:#991b1b}.muted{color:#64748b}.erp-form{display:grid;gap:10px}.erp-form.cols-2{grid-template-columns:1fr 1fr}.erp-form.cols-3{grid-template-columns:repeat(3,1fr)}.erp-form.cols-4{grid-template-columns:repeat(4,1fr)}.erp-form label{font-size:12px;font-weight:900;color:#475569}.erp-form .full{grid-column:1/-1}.section-title{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}.section-title h2,.section-title h3{margin:0}.thumb{width:110px;height:80px;object-fit:cover;border-radius:12px;border:1px solid #dbe4ef}.photo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}.photo-card{background:#fff;border:1px solid #dbe4ef;border-radius:16px;overflow:hidden}.photo-card img{width:100%;height:130px;object-fit:cover}.photo-card div{padding:10px}.calendar-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}.calendar-day{min-height:120px;background:#fff;border:1px solid #dbe4ef;border-radius:14px;padding:8px}.calendar-day .n{font-weight:900}.calendar-event{margin-top:6px;padding:6px 7px;border-radius:9px;background:#eff6ff;color:#1e3a8a;font-size:11px}.stock-low{background:#fff1f2!important}.stock-ok{background:#f0fdf4!important}
-html[data-theme="dark"] body:not(.modo-pdf){color:#e5edf8;background:radial-gradient(circle at 10% 0%,rgba(37,99,235,.16),transparent 28rem),linear-gradient(180deg,#07101d,#0a1424 58%,#0b1525)!important}
-html[data-theme="dark"] body:not(.modo-pdf)::before{background:linear-gradient(135deg,#020617,#0b1220 60%,#10213b)}
-html[data-theme="dark"] body:not(.modo-pdf) .card,html[data-theme="dark"] body:not(.modo-pdf) .panel,html[data-theme="dark"] body:not(.modo-pdf) .p,html[data-theme="dark"] body:not(.modo-pdf) .filters,html[data-theme="dark"] body:not(.modo-pdf) .tablebox,html[data-theme="dark"] body:not(.modo-pdf) .form-wrap,html[data-theme="dark"] .kpi,html[data-theme="dark"] .calendar-day,html[data-theme="dark"] .photo-card{background:rgba(15,23,42,.96)!important;color:#e5edf8!important;border-color:#26354b!important}
-html[data-theme="dark"] body:not(.modo-pdf) h2,html[data-theme="dark"] body:not(.modo-pdf) .p h1,html[data-theme="dark"] body:not(.modo-pdf) .panel h1,html[data-theme="dark"] body:not(.modo-pdf) .card h1,html[data-theme="dark"] body:not(.modo-pdf) .form-wrap h1,html[data-theme="dark"] body:not(.modo-pdf) .p h2,html[data-theme="dark"] body:not(.modo-pdf) .panel h2,html[data-theme="dark"] body:not(.modo-pdf) .card h2{color:#f8fafc!important}
-html[data-theme="dark"] body:not(.modo-pdf) table{background:#0f172a!important;color:#e5edf8}html[data-theme="dark"] body:not(.modo-pdf) td{border-color:#243244!important}html[data-theme="dark"] body:not(.modo-pdf) tr:hover td{background:#172033}html[data-theme="dark"] body:not(.modo-pdf) input,html[data-theme="dark"] body:not(.modo-pdf) select,html[data-theme="dark"] body:not(.modo-pdf) textarea{background:#0b1220!important;color:#e5edf8!important;border-color:#334155!important}html[data-theme="dark"] body:not(.modo-pdf) .light{background:#111827!important;color:#e5edf8!important;border-color:#334155!important}html[data-theme="dark"] .muted,html[data-theme="dark"] .kpi small{color:#94a3b8}
-@media(max-width:1000px){.kpi-grid,.grid-3{grid-template-columns:1fr 1fr}.erp-form.cols-4{grid-template-columns:1fr 1fr}.srnu-nav{overflow:auto;white-space:nowrap}}
-@media(max-width:650px){.kpi-grid,.grid-2,.grid-3,.erp-form.cols-2,.erp-form.cols-3,.erp-form.cols-4{grid-template-columns:1fr}.calendar-grid{grid-template-columns:1fr}.calendar-day{min-height:auto}}
+/* Base & Reset */
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
+html {
+  scroll-behavior: smooth;
+  font-family: var(--ios-font);
+}
 
-/* ===== REGISTRO DE CLIENTES ===== */
-.cliente-registro-row{display:grid;grid-template-columns:minmax(260px,1fr) auto auto;gap:8px;align-items:center}
-.cliente-registro-row .btn-agregar,.cliente-registro-row .btn-volver-cotizaciones{white-space:nowrap;min-height:44px;padding:10px 14px;border:0}
-.cliente-modal{position:fixed;inset:0;z-index:12000;background:rgba(2,8,23,.62);backdrop-filter:blur(7px);display:none;align-items:center;justify-content:center;padding:18px}
-.cliente-modal.open{display:flex}.cliente-modal-card{width:min(520px,100%);background:#fff;border:1px solid #dbe4ef;border-radius:22px;padding:20px;box-shadow:0 35px 100px rgba(2,8,23,.35)}
-.cliente-modal-head{display:flex;justify-content:space-between;gap:14px;align-items:flex-start;margin-bottom:16px}.cliente-modal-head strong{display:block;font-size:20px}.cliente-modal-head span{display:block;color:#64748b;font-size:12px;margin-top:4px}.cliente-modal-head button{width:38px;height:38px;border:0;border-radius:11px;background:#f1f5f9;color:#0f172a}
-.cliente-modal-msg{min-height:22px;font-size:12px;color:#64748b;margin:4px 0 12px}.cliente-modal-msg.error{color:#b91c1c}
-html[data-theme="dark"] .cliente-modal-card{background:#0f172a;color:#e5edf8;border-color:#334155}html[data-theme="dark"] .cliente-modal-head span{color:#94a3b8}html[data-theme="dark"] .cliente-modal-head button{background:#1e293b;color:#fff}
-@media(max-width:700px){.cliente-registro-row{grid-template-columns:1fr}.cliente-registro-row>*{width:100%!important;justify-content:center}}
+body:not(.modo-pdf) {
+  margin: 0 !important;
+  min-height: 100vh;
+  background-color: var(--ios-bg) !important;
+  background-image: none !important;
+  color: var(--ios-text) !important;
+  font-family: var(--ios-font) !important;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
 
-.srnu-user-pill{display:flex;align-items:center;gap:7px;padding:6px 9px;border:1px solid var(--line);border-radius:11px;font-size:11px;white-space:nowrap}.srnu-user-pill span{font-weight:800}.srnu-user-pill small{font-size:9px;opacity:.7}.srnu-user-pill a{color:var(--accent,#60a5fa);font-weight:800;text-decoration:none}.srnu-user-pill a:hover{text-decoration:underline}@media(max-width:1180px){.srnu-user-pill{display:none}}
+body:not(.modo-pdf)::before {
+  display: none !important;
+}
+
+/* Layout General con Sidebar en Desktop */
+@media (min-width: 992px) {
+  body:not(.modo-pdf) {
+    padding-left: 260px !important;
+    transition: padding-left 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  body:not(.modo-pdf).sidebar-collapsed {
+    padding-left: 78px !important;
+  }
+}
+
+@media (max-width: 991px) {
+  body:not(.modo-pdf) {
+    padding-left: 0 !important;
+    padding-bottom: 88px !important; /* Espacio para barra de navegación inferior en móvil */
+  }
+}
+
+/* ==========================================================
+   TOPBAR ESTILO APPLE (Transparente con Blur)
+   ========================================================== */
+.ios-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 990;
+  height: 58px;
+  background: var(--ios-topbar-bg);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border-bottom: 1px solid var(--ios-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 18px;
+  gap: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+}
+
+.ios-topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ios-btn-sidebar-toggle {
+  background: transparent;
+  border: none;
+  color: var(--ios-text);
+  width: 36px;
+  height: 36px;
+  border-radius: var(--ios-radius-btn);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.ios-btn-sidebar-toggle:hover {
+  background: var(--ios-border);
+}
+
+.ios-topbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--ios-text);
+}
+
+.ios-topbar-brand img {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  object-fit: contain;
+  background: #ffffff;
+  padding: 2px;
+  border: 1px solid var(--ios-border);
+}
+
+.ios-brand-texts {
+  display: flex;
+  flex-direction: column;
+}
+
+.ios-brand-title {
+  font-weight: 700;
+  font-size: 13.5px;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+}
+
+.ios-brand-sub {
+  font-size: 9.5px;
+  color: var(--ios-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.ios-topbar-center {
+  flex: 1;
+  max-width: 440px;
+}
+
+.ios-quick-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--ios-card);
+  border: 1px solid var(--ios-border);
+  border-radius: var(--ios-radius-pill);
+  padding: 6px 14px;
+  text-decoration: none;
+  color: var(--ios-muted);
+  font-size: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+  transition: all 0.2s ease;
+}
+
+.ios-quick-search:hover {
+  border-color: var(--ios-primary);
+  color: var(--ios-text);
+}
+
+.ios-quick-search span {
+  flex: 1;
+}
+
+.ios-quick-search kbd {
+  background: var(--ios-border);
+  color: var(--ios-text-secondary);
+  font-size: 10px;
+  padding: 2px 5px;
+  border-radius: 4px;
+  font-family: inherit;
+  font-weight: 600;
+}
+
+.ios-topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ios-btn-cta {
+  background: var(--ios-primary);
+  color: #ffffff !important;
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: var(--ios-radius-pill);
+  font-size: 12.5px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 4px 12px rgba(0, 113, 227, 0.25);
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+.ios-btn-cta:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+
+.ios-btn-cta:active {
+  transform: scale(0.97);
+}
+
+.ios-icon-btn {
+  background: var(--ios-card);
+  border: 1px solid var(--ios-border);
+  color: var(--ios-text);
+  width: 36px;
+  height: 36px;
+  border-radius: var(--ios-radius-btn);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.ios-icon-btn:hover {
+  background: var(--ios-border);
+}
+
+.ios-user-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 10px 4px 4px;
+  background: var(--ios-card);
+  border: 1px solid var(--ios-border);
+  border-radius: var(--ios-radius-pill);
+}
+
+.ios-user-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--ios-primary-light);
+  color: var(--ios-primary);
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ios-user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.ios-user-info strong {
+  font-size: 11px;
+  line-height: 1.1;
+}
+
+.ios-user-info a {
+  font-size: 9.5px;
+  color: var(--ios-danger);
+  text-decoration: none;
+}
+
+.ios-user-info a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .ios-topbar-center, .ios-user-info, .ios-brand-sub {
+    display: none !important;
+  }
+  .ios-btn-cta span {
+    display: none;
+  }
+  .ios-btn-cta {
+    padding: 8px 10px;
+  }
+}
+
+/* ==========================================================
+   SIDEBAR LATERAL ESTILO IPADOS / MACOS
+   ========================================================== */
+.ios-sidebar {
+  background: var(--ios-sidebar-bg);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border-right: 1px solid var(--ios-border);
+}
+
+@media (min-width: 992px) {
+  .ios-sidebar {
+    position: fixed;
+    top: 58px;
+    left: 0;
+    bottom: 0;
+    width: 260px;
+    z-index: 900;
+    overflow-y: auto;
+    transition: width 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  body:not(.modo-pdf).sidebar-collapsed .ios-sidebar {
+    width: 78px;
+  }
+  body:not(.modo-pdf).sidebar-collapsed .ios-nav-group-title,
+  body:not(.modo-pdf).sidebar-collapsed .ios-nav-label {
+    display: none !important;
+  }
+  body:not(.modo-pdf).sidebar-collapsed .ios-nav-item {
+    justify-content: center;
+    padding: 10px 0;
+  }
+}
+
+@media (max-width: 991px) {
+  .ios-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 280px;
+    z-index: 11000;
+    transform: translateX(-100%);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.35);
+  }
+  .ios-sidebar.open {
+    transform: translateX(0);
+  }
+}
+
+.ios-sidebar-scroll {
+  padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.ios-nav-group-title {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--ios-muted);
+  letter-spacing: 0.08em;
+  padding: 0 10px;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.ios-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  border-radius: 12px;
+  color: var(--ios-text-secondary);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.15s ease;
+}
+
+.ios-nav-item:hover {
+  background: var(--ios-border);
+  color: var(--ios-text);
+}
+
+.ios-nav-item.active {
+  background: var(--ios-primary);
+  color: #ffffff !important;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 113, 227, 0.28);
+}
+
+.ios-nav-item.active .ios-nav-icon {
+  color: #ffffff;
+}
+
+.ios-nav-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ios-muted);
+  transition: color 0.15s ease;
+}
+
+.ios-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 10500;
+}
+
+.ios-overlay.active {
+  display: block;
+}
+
+/* ==========================================================
+   FLOATING BOTTOM TAB BAR (MOBILE)
+   ========================================================== */
+.ios-bottom-bar {
+  display: none;
+}
+
+@media (max-width: 991px) {
+  .ios-bottom-bar {
+    display: flex;
+    position: fixed;
+    bottom: 12px;
+    left: 12px;
+    right: 12px;
+    height: 62px;
+    background: var(--ios-topbar-bg);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid var(--ios-border);
+    border-radius: 32px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    z-index: 9999;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 6px;
+  }
+
+  .ios-tab-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    color: var(--ios-muted);
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 16px;
+    transition: color 0.15s ease;
+  }
+
+  .ios-tab-item.active {
+    color: var(--ios-primary);
+  }
+
+  .ios-tab-fab {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--ios-primary), #0077ed);
+    color: #ffffff !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    font-weight: 300;
+    box-shadow: 0 6px 18px rgba(0, 113, 227, 0.45);
+    transform: translateY(-10px);
+    text-decoration: none;
+    transition: transform 0.15s ease;
+  }
+
+  .ios-tab-fab:active {
+    transform: translateY(-8px) scale(0.95);
+  }
+}
+
+/* ==========================================================
+   CONTENEDORES, PANELES Y TARJETAS SQUIRCLE ESTILO APPLE
+   ========================================================== */
+body:not(.modo-pdf) .w,
+body:not(.modo-pdf) .wrap,
+body:not(.modo-pdf) .form-wrap {
+  max-width: 1360px !important;
+  margin: 24px auto 40px !important;
+  padding: 0 20px !important;
+}
+
+body:not(.modo-pdf) .card,
+body:not(.modo-pdf) .panel,
+body:not(.modo-pdf) .p,
+body:not(.modo-pdf) .filters,
+body:not(.modo-pdf) .tablebox,
+body:not(.modo-pdf) .form-wrap {
+  background: var(--ios-card) !important;
+  border: 1px solid var(--ios-border) !important;
+  border-radius: var(--ios-radius) !important;
+  box-shadow: var(--ios-shadow) !important;
+  padding: 20px !important;
+  color: var(--ios-text) !important;
+  transition: all 0.2s ease;
+}
+
+/* Titulares y Encabezados */
+body:not(.modo-pdf) h1 {
+  font-size: clamp(24px, 3.2vw, 36px) !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.03em !important;
+  color: var(--ios-text) !important;
+  margin: 0 0 4px 0 !important;
+}
+
+body:not(.modo-pdf) h2,
+body:not(.modo-pdf) h3 {
+  font-weight: 700 !important;
+  letter-spacing: -0.02em !important;
+  color: var(--ios-text) !important;
+}
+
+.srnu-page-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 22px;
+  flex-wrap: wrap;
+}
+
+.srnu-page-heading p {
+  color: var(--ios-muted);
+  font-size: 13.5px;
+  margin: 4px 0 0 0;
+}
+
+/* Selector de Mes / Fecha Estilo Cápsula iOS */
+.ios-month-picker {
+  background: var(--ios-card);
+  border: 1px solid var(--ios-border);
+  border-radius: var(--ios-radius-pill);
+  padding: 4px 14px;
+  display: inline-flex;
+  align-items: center;
+  box-shadow: var(--ios-shadow);
+}
+
+.ios-month-picker input[type="month"],
+.ios-month-picker input[type="date"] {
+  background: transparent !important;
+  border: none !important;
+  color: var(--ios-text) !important;
+  font-weight: 600;
+  font-size: 13px;
+  min-height: auto !important;
+  padding: 4px 0 !important;
+  outline: none;
+  cursor: pointer;
+}
+
+/* ==========================================================
+   TARJETAS KPI ESTILO APPLE WIDGETS
+   ========================================================== */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.kpi {
+  background: var(--ios-card) !important;
+  border: 1px solid var(--ios-border) !important;
+  border-radius: var(--ios-radius) !important;
+  padding: 18px 20px !important;
+  box-shadow: var(--ios-shadow) !important;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.kpi:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--ios-shadow-lg) !important;
+}
+
+.kpi small {
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  color: var(--ios-muted) !important;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.kpi strong {
+  display: block;
+  font-size: 28px !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.03em;
+  color: var(--ios-text) !important;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+
+.kpi .muted {
+  font-size: 12px;
+  color: var(--ios-muted);
+}
+
+.srnu-stat-accent {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .kpi-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 580px) {
+  .kpi-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+/* ==========================================================
+   TABLAS Y LISTAS RESPONSIVAS
+   ========================================================== */
+body:not(.modo-pdf) table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--ios-card) !important;
+  font-size: 13px;
+}
+
+body:not(.modo-pdf) th {
+  background: var(--ios-card-secondary) !important;
+  color: var(--ios-muted) !important;
+  font-weight: 700 !important;
+  text-transform: uppercase;
+  font-size: 10.5px !important;
+  letter-spacing: 0.06em;
+  padding: 12px 14px !important;
+  border-bottom: 1px solid var(--ios-border) !important;
+}
+
+body:not(.modo-pdf) td {
+  padding: 12px 14px !important;
+  border-bottom: 1px solid var(--ios-border) !important;
+  color: var(--ios-text);
+  vertical-align: middle;
+}
+
+body:not(.modo-pdf) tr:last-child td {
+  border-bottom: none !important;
+}
+
+body:not(.modo-pdf) tr:hover td {
+  background: var(--ios-primary-light);
+}
+
+/* Badges / Chips estilo iOS */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 9px;
+  border-radius: var(--ios-radius-pill);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.badge-blue { background: var(--ios-primary-light); color: var(--ios-primary); }
+.badge-green { background: var(--ios-success-light); color: var(--ios-success); }
+.badge-orange { background: var(--ios-warning-light); color: var(--ios-warning); }
+.badge-red { background: var(--ios-danger-light); color: var(--ios-danger); }
+
+/* Botones estilo iOS */
+body:not(.modo-pdf) a.btn,
+body:not(.modo-pdf) .btn,
+body:not(.modo-pdf) button:not(.ios-btn-sidebar-toggle):not(.ios-tab-item) {
+  border-radius: var(--ios-radius-btn) !important;
+  font-weight: 600 !important;
+  font-size: 13px !important;
+  padding: 9px 15px !important;
+  border: 1px solid transparent !important;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+body:not(.modo-pdf) .btn:active,
+body:not(.modo-pdf) a.btn:active {
+  transform: scale(0.97) !important;
+}
+
+body:not(.modo-pdf) .btn.blue {
+  background: var(--ios-primary) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(0, 113, 227, 0.25);
+}
+
+body:not(.modo-pdf) .btn.light {
+  background: var(--ios-card-secondary) !important;
+  color: var(--ios-text) !important;
+  border-color: var(--ios-border) !important;
+}
+
+body:not(.modo-pdf) .btn.light:hover {
+  background: var(--ios-border) !important;
+}
+
+/* Inputs, Selects y Formularios */
+body:not(.modo-pdf) input:not([type="checkbox"]):not([type="radio"]),
+body:not(.modo-pdf) select,
+body:not(.modo-pdf) textarea {
+  min-height: 42px;
+  border-radius: var(--ios-radius-btn) !important;
+  border: 1px solid var(--ios-border) !important;
+  background: var(--ios-card-secondary) !important;
+  color: var(--ios-text) !important;
+  padding: 8px 12px !important;
+  font-size: 13.5px !important;
+  outline: none;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+body:not(.modo-pdf) input:focus,
+body:not(.modo-pdf) select:focus,
+body:not(.modo-pdf) textarea:focus {
+  border-color: var(--ios-primary) !important;
+  box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.22) !important;
+  background: var(--ios-card) !important;
+}
+
+/* Mosaico de accesos rápidos estilo App Grid de iOS */
+.ios-quick-actions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.ios-app-tile {
+  background: var(--ios-card-secondary);
+  border: 1px solid var(--ios-border);
+  border-radius: 16px;
+  padding: 14px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--ios-text);
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+  transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+}
+
+.ios-app-tile:hover {
+  transform: translateY(-2px);
+  background: var(--ios-card);
+  box-shadow: var(--ios-shadow);
+  border-color: var(--ios-primary);
+}
+
+.ios-app-tile .tile-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: var(--ios-primary-light);
+  color: var(--ios-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
