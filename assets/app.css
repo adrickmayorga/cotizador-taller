@@ -828,3 +828,60 @@ body:not(.modo-pdf) textarea:focus {
   align-items: center;
   justify-content: center;
 }
+
+/* ==========================================================
+   ADAPTACIÓN FORMULARIOS COTIZADOR A ESTILO APPLE HIG
+   ========================================================== */
+body:not(.modo-pdf) .form-wrap {
+  background: var(--ios-card);
+  border: 1px solid var(--ios-border);
+  border-radius: var(--ios-radius-lg);
+  box-shadow: var(--ios-shadow);
+  color: var(--ios-text);
+  transition: margin-left 0.25s cubic-bezier(0.16, 1, 0.3, 1), max-width 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+body:not(.modo-pdf) .form-wrap h2 {
+  color: var(--ios-text);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+body:not(.modo-pdf) .form-wrap input,
+body:not(.modo-pdf) .form-wrap select,
+body:not(.modo-pdf) .form-wrap textarea {
+  background: var(--ios-input);
+  border: 1px solid var(--ios-border);
+  border-radius: var(--ios-radius-sm);
+  color: var(--ios-text);
+  transition: all 0.2s ease;
+}
+
+body:not(.modo-pdf) .form-wrap input:focus,
+body:not(.modo-pdf) .form-wrap select:focus,
+body:not(.modo-pdf) .form-wrap textarea:focus {
+  border-color: var(--ios-primary);
+  box-shadow: 0 0 0 3px var(--ios-primary-light);
+  outline: none;
+}
+
+@media (min-width: 901px) {
+  body:not(.modo-pdf) .form-wrap {
+    margin-left: calc(var(--ios-sidebar-width) + 30px);
+    margin-right: 30px;
+    max-width: calc(100% - var(--ios-sidebar-width) - 60px);
+  }
+  body.sidebar-collapsed:not(.modo-pdf) .form-wrap {
+    margin-left: calc(var(--ios-sidebar-collapsed) + 30px);
+    max-width: calc(100% - var(--ios-sidebar-collapsed) - 60px);
+  }
+}
+
+@media (max-width: 900px) {
+  body:not(.modo-pdf) .form-wrap {
+    margin: 16px 12px 100px 12px;
+    padding: 20px 16px;
+    border-radius: var(--ios-radius);
+  }
+}
+

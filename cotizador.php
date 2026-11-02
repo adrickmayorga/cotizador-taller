@@ -3279,7 +3279,7 @@ body.modo-pdf .resumen-interno-admin { display:none !important; }
     }
 }
 </style>
-<?php if (!$modo_pdf): ?><link rel="stylesheet" href="assets/app.css"><script defer src="assets/app.js"></script><?php endif; ?></head>
+<?php if (!$modo_pdf): echo srnu_ui_head($tab_title); endif; ?></head>
 
 
 <body class="<?= $modo_pdf ? 'modo-pdf tipo-' . htmlspecialchars($tipo_pdf, ENT_QUOTES, 'UTF-8') : '' ?>">

@@ -155,7 +155,7 @@ $catalogoJson = array_map(static function(array $r): array {
 </head>
 <body>
 <?php srnu_appbar('rapido'); ?>
-<main class="qr-wrap">
+<main class="w qr-wrap">
     <div class="qr-head">
         <div><h1>⚡ Cotizador rápido</h1><div class="qr-sub">Prueba costos y precios sin llenar datos del cliente. Nada se guarda en MySQL hasta que tú lo decidas.</div></div>
         <div class="qr-badge">● MODO PRUEBA · NO GUARDADO</div>
