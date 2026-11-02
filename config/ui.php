@@ -70,6 +70,14 @@ function srnu_appbar(string $active = ''): void {
         unset($navGroups['AJUSTES & SISTEMA']);
     }
 
+    // El acceso web/red y la IA local son herramientas técnicas exclusivas del creador del software.
+    // Para los talleres compradores (clientes) se ocultan automáticamente para evitar desconfiguraciones.
+    $isCreator = $isLogged && in_array(strtolower((string)($user['usuario'] ?? '')), ['adrick', 'superadmin', 'creador', 'dev'], true);
+    if (!$isCreator && isset($navGroups['AJUSTES & SISTEMA'])) {
+        unset($navGroups['AJUSTES & SISTEMA']['web']);
+        unset($navGroups['AJUSTES & SISTEMA']['ia']);
+    }
+
     echo '<!-- iOS / Apple Top Bar -->';
     echo '<header class="ios-topbar">';
     echo '  <div class="ios-topbar-left">';
